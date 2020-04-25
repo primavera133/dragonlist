@@ -6,11 +6,7 @@ export function PublicRoute ({ component: Component, authed, ...rest }) {
     <Route
       {...rest}
       render={props =>
-        authed === false ? (
-          <Component {...props} />
-        ) : (
-          <Redirect to='/dashboard' />
-        )
+        authed === false ? <Component {...props} /> : <Redirect to='/profile' />
       }
     />
   )
